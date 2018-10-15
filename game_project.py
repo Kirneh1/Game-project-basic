@@ -17,22 +17,14 @@ def remove_punct(text):
     >>> remove_punct(",go!So.?uTh")
     'goSouTh'
     """
-    empty_array = []
-    text_array = list(text)
-    length = len(text_array)
-    for character in range(length):
-        if text_array[character] == " " or text_array[character].isalpha():
-            empty_array.append(text_array[character])
+    without_punct = []
+    for character in text:
+        if character == " " or character.isalpha():
+            without_punct.append(character)
           
-    
-
-    final_text = ''.join(empty_array)
+    final_text = ''.join(without_punct)
     return final_text
 
-    
-
-
-    pass # The pass statement does nothing. Replace it with the body of your function.
     
     
 def remove_spaces(text):
@@ -105,25 +97,7 @@ def normalise_input(user_input):
     'help'
     """
     
-    empty_array = []
-    text_array = list(user_input)
-    length = len(text_array)
-    for character in range(length):
-        if text_array[character] == " " or text_array[character].isalpha():
-            empty_array.append(text_array[character])
-          
-    
-
-    final_text = ''.join(empty_array)
-
-    lower_all = final_text.lower()
-
-    final_text2 = ''.join(lower_all)
-
-    final_text3 = final_text2.strip()
-
-    return final_text3      
-
+    return remove_punct(user_input).lower().strip()
 
     pass
 
@@ -150,7 +124,7 @@ def display_room(room):
     Note: <BLANKLINE> here means that doctest should expect a blank line.
     """
     print("")
-    print(room["name"])
+    print(room["name"].upper())
     print("")
     print(room["description"])
     print("")
@@ -211,6 +185,8 @@ def print_menu(exits):
     
     # COMPLETE THIS PART:
     # Iterate over available exits:
+    for exit_location in exits.keys():
+        print_menu_line(exit_location, exits[exit_location])
     #     and for each exit print the appropriate menu line
 
     print("Where do you want to go?")
@@ -232,6 +208,7 @@ def is_valid_exit(exits, user_input):
     >>> is_valid_exit(rooms["Parking"]["exits"], "east")
     True
     """
+    return bool(user_input in exits)
     pass
 
 
@@ -251,11 +228,16 @@ def menu(exits):
         # COMPLETE THIS PART:
         
         # Display menu
-
+        print_menu(exits)
+        read_it = input("")
+        
         # Read player's input
-
+        read_it = str(read_it)
         # Normalise the input
+        normalise_input(read_it)
 
+        if is_valid_exit(exits, normalise_input(read_it)) == True:
+            return read_it
         # Check if the input makes sense (is valid exit)
             # If so, return the player's choice
 
@@ -274,6 +256,14 @@ def move(exits, direction):
     >>> move(rooms["Reception"]["exits"], "west") == rooms["Office"]
     False
     """
+    for room_x in rooms.keys():
+        
+        if exits[direction] in rooms[room_x]["name"]:
+            global correct_room
+            correct_room = room_x
+            
+       
+    return rooms[correct_room]
     pass
 
 
@@ -281,6 +271,8 @@ def move(exits, direction):
 def main():
     # Start game at the reception
     current_room = rooms["Reception"]
+    
+    
 
     # Main game loop
     while True:

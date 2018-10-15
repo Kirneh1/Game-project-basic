@@ -9,7 +9,7 @@ seems to be playing an old school text-based adventure
 game on his computer. There are corridors leading to the
 south and east. The exit is to the west.""",
 
-    "exits": {"south": "MJ and Simon's room", "west":"Parking", "east":"your personal tutor's office"} # COMPLETE ME! ADD EXITS!
+    "exits": {"south": "MJ and Simon's room", "west":"the parking lot", "east":"your personal tutor's office"} # COMPLETE ME! ADD EXITS!
 }
 
 room_admins = {
@@ -20,7 +20,7 @@ room_admins = {
 room. Inside you notice Matt "MJ" John and Simon Jones. They
 ignore you. To the north is the reception.""",
 
-   "exits":{"north":"reception"} # ADD EXITS HERE!
+   "exits":{"north":"Reception"} # ADD EXITS HERE!
 }
 
 room_tutor = {
@@ -47,7 +47,7 @@ general office.""",
 }
 
 room_office = {
-    "name": "THE GENERAL OFFICE",
+    "name": "General Office",
 
     "description":
     """You are standing next to the cashier's till at
