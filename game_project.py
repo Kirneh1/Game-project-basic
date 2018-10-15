@@ -45,34 +45,37 @@ def remove_spaces(text):
     """
 
     """
-    try:
+    (removes leading/trailing and double spaces random attempt)
+    try:   
         array_of_text = list(text)
         starting_pointer = 0
         pointer = 0
         stabiliser = 0
         length = len(array_of_text)
         while array_of_text[pointer] == " ":
-            if array_of_text[pointer] == " ":
-                array_of_text[pointer] = "\\"
-                pointer +=1
-                starting_pointer += 1
+                if array_of_text[pointer] == " ":
+                    array_of_text[pointer] = "\\"
+                    pointer +=1
+                    starting_pointer += 1
     except IndexError:
         array_of_text = ''
         final_text = array_of_text
         return final_text
-    
+
     while pointer + 1 < length:
         if array_of_text[pointer] == array_of_text[pointer+1] == " ":
             array_of_text[pointer] = "\\"
             stabiliser += 1                                
         else:
             pointer += 1
-        
+
+    
     for i in range(stabiliser + starting_pointer):
         array_of_text.remove("\\")
     if array_of_text[-1] == " ":
         array_of_text.pop()
-   
+
+    
     final_text = "".join(array_of_text)
     return final_text
     """
