@@ -43,11 +43,11 @@ room_parking = {
 You can go south to the COMSC reception, or east to the
 general office.""",
 
-   "exits": {"south":"Reception", "east":"General Office"} # ADD EXITS HERE!
+   "exits": {"south":"Reception", "east":"the General office"} # ADD EXITS HERE!
 }
 
 room_office = {
-    "name": "General Office",
+    "name": "the general office",
 
     "description":
     """You are standing next to the cashier's till at
