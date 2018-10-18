@@ -43,26 +43,6 @@ def remove_spaces(text):
     >>> remove_spaces("   ")
     ''
     """
-
-    """
-    -----------------------------------------
-    This should do the same as text.strip()
-    -----------------------------------------
-    text1 = list(text)
-    index = 0
-    index2 = 0
-    while text1[index] ==" ":
-        if text1[index] == " ":
-            text1.remove(text1[index])
-    text2 = text1[::-1]
-    while text2[index2] == " ":
-        if text2[index2] == " ":
-            text2.remove(text2[index2])
-    text3 = text2[::-1]
-    final_text = ''.join(text3)
-    return final_text
-    -----------------------------------------
-    """
     
     final_text = text.strip()
     return final_text
@@ -170,11 +150,10 @@ def print_menu(exits):
     """
     print("You can:")
     
-    # COMPLETE THIS PART:
+    
     # Iterate over available exits:
     for exit_location in exits.keys():
         print_menu_line(exit_location, exits[exit_location])
-    #     and for each exit print the appropriate menu line
 
     print("Where do you want to go?")
 
@@ -212,7 +191,7 @@ def menu(exits):
     # Repeat until the player enter a valid choice
     while True:
         pass
-        # COMPLETE THIS PART:
+    
         
         # Display menu
         print_menu(exits)

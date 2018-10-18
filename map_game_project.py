@@ -20,7 +20,7 @@ room_admins = {
 room. Inside you notice Matt "MJ" John and Simon Jones. They
 ignore you. To the north is the reception.""",
 
-   "exits":{"north":"Reception"} # ADD EXITS HERE!
+   "exits":{"north":"Reception"} 
 }
 
 room_tutor = {
@@ -32,7 +32,7 @@ stares at his huge monitor, ignoring you completely.
 On the desk you notice a cup of coffee and an empty
 pack of biscuits. The reception is to the west.""",
 
-    "exits": {"west": "Reception"}  # ADD EXITS HERE!
+    "exits": {"west": "Reception"}
 }
 
 room_parking = {
@@ -43,7 +43,7 @@ room_parking = {
 You can go south to the COMSC reception, or east to the
 general office.""",
 
-   "exits": {"south":"Reception", "east":"the General office"} # ADD EXITS HERE!
+   "exits": {"south":"Reception", "east":"the general office"} 
 }
 
 room_office = {
@@ -55,7 +55,7 @@ room_office = {
 in their eyes. If you go west you can return to the
 Queen's Buildings.""",
 
-    "exits": {"west": "the parking lot"}# ADD EXITS HERE!
+    "exits": {"west": "the parking lot"}
 }
 
 
